@@ -3,7 +3,7 @@
     
     <%= @users.find(@post.user_id).username %>
     <% if @users.find(@post.user_id).username == current_user.username %>
-    <%= button_to "delete post button placeholder", logout_path, method: :delete %>
+    <%= button_to "delete post placeholder", logout_path, method: :delete, params: {user_id: @post.user_id}%>
     <% end %>
     <br>
     <%= @post.content %>

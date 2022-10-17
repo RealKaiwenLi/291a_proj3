@@ -5,9 +5,10 @@ Rails.application.routes.draw do
   get "/signup", to: "users#new"
   get "/posts", to: "posts#index"  
   get "/posts/:id", to: "posts#show"
+  get "/newposts", to: "posts#new"
   get "/login", to: "sessions#new"
-  post "login", to: "sessions#create"
+  post "/login", to: "sessions#create"
   delete "logout", to: "sessions#destroy"
 
-  resources :users, except: [:new]
+  resources :users, :posts, except: [:new]
 end
