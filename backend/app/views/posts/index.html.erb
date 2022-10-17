@@ -7,6 +7,10 @@
   <% @posts.each do |post| %>
     <li>
       <%= @users.find(post.user_id).username %>
+      <% if @users.find(post.user_id).username == current_user.username %>
+      <%= button_to "delete post button placeholder", logout_path, method: :delete %>
+      <% end %>
+      <br>
       <%= post.content %>
     </li>
   <% end %>
