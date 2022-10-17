@@ -1,0 +1,9 @@
+<h2><%=  current_user.username %></h2>
+<ul>
+  <% @posts.each do |post| %>
+    <li>
+      <%= @users.find(post.user_id).username %>
+      <%= post.content %>
+    </li>
+  <% end %>
+</ul>
